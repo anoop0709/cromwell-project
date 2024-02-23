@@ -104,6 +104,7 @@ export const userData = async (req, res) => {
     try {
         const { id } = req.params;
         mongoSanitize.sanitize(id);
+        await connectDatabase()
         const user = await User.findOne({ _id: id });
         const { _id, firstName, lastName, email } = user;
         const userObj = {
@@ -116,6 +117,9 @@ export const userData = async (req, res) => {
         
     } catch (error) {
         return res.status(401).send(error.message)
+    } finally {
+        console.log('db disconnected');
+        await mongoose.disconnect();
     }
 
 }
