@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+    
+}
+.signInContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:relative;
+    padding: 50px 0px 50px 0px;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1300px;
+    gap: 5px;
+}
+.navigation>p {
+    font-size: 1.2rem;
+}
+.navigation>p:nth-child(1) {
+    color: rgb(82, 82, 82);
+    cursor: pointer;
+}
+.navigation>p:nth-child(3) {
+    color: rgb(46, 46, 46);
+    font-weight: bold;
+}
+.gtIcon {
+    color:rgb(255, 67, 4);
+    font-size: .8rem;
+}
+.signInWrapper{
+    width: 100%;
+    max-width: 1300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    padding: 5px;
+}
+.signinbox{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+    height: auto;
+}
+.signInform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+.loginTxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.logIcon {
+    color:rgb(255, 67, 4);   
+    font-size: 2rem;
+}
+.loginTxt>h2 {
+    color: rgb(82, 82, 82);
+}
+.registerTxt>p{
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.registerTxt {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+.registerTxt>p>span{
+    color:rgb(255, 67, 4);  
+    padding-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+.formBtn{
+    width: 100%;
+    padding: 20px;
+
+}
+.formBtn>button{
+    float:right;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border:none;
+    font-size: 14px;
+    font-weight: 500;
+    color:white;
+    background-color: rgb(7, 7, 7);
+    cursor: pointer;
+
+}
+
+@media screen and (min-width:360px) and (max-width:765px) {
+    .navigation {
+        justify-content: center;
+    }
+}

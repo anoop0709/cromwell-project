@@ -65,6 +65,6 @@ export const userRegisterInput = [
         placeholder: "Confirm password",
         errMessage: "Confirm password not match",
         required: "true",
-        pattern: values.password
+        pattern: "^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=])(?=.*[0-9]).*$"
     }
 ];

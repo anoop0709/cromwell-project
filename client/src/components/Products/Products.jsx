@@ -17,7 +17,7 @@ export const ProductList = () => {
                             <img src={category.img} alt="" />
                         </div>
                         <div className='categoryLink'>
-                            <h4>{category.link}</h4>
+                            <p>{category.link}</p>
                             <FontAwesomeIcon className= 'arrowIcon' icon={faGreaterThan}/>
                         </div>
                     </div>

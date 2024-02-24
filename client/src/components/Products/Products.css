@@ -39,15 +39,17 @@
 }
 .categoryLink {
     display: flex;
-    justify-content:flex-start;
+    justify-content:left;
     align-items: center;
     gap: 10px;
 }
-.categoryLink>h4 {
+.categoryLink>p {
     color: rgb(63, 63, 63);
     font-size: larger;
+    font-weight: bold;
+    max-width: 150px;
 }
-.categoryLink>h4:hover {
+.categoryLink>p:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -75,7 +77,7 @@
         width: 150px;
         height: 100px;
     }
-    .categoryLink>h4 {
+    .categoryLink>p {
         font-size: 1rem;
     }
 

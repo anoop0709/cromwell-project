@@ -30,13 +30,19 @@
     object-fit:cover;
     border-radius: 5px;
 }
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
 .navItems{
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-direction: column;
-gap: .5rem;
-margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 10px;
 }
 .navIcon {
     color:rgb(255, 67, 4);
@@ -69,5 +75,7 @@ margin: 10px;
     .account {
         display: none;
     }
-    
+    .navIcon {
+        font-size: 1rem;
+    }
 }
