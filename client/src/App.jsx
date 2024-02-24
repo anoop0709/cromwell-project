@@ -1,9 +1,7 @@
 import React from "react";
 
 const App = () => {
-    return (
-        <div>hai</div>
-    )
-    }
+  return <div>hai</div>;
+};
 
-    export default App;
+export default App;
