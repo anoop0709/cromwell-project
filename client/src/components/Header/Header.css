@@ -24,7 +24,7 @@
     max-height: 100%;
     margin: 10px;
 }
-.logoDiv>img{
+.logoDiv>.logoLink>img{
     width: 100%;
     height: 100%;
     object-fit:cover;
@@ -38,6 +38,15 @@
     gap: 20px;
 }
 .navItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 10px;
+}
+.accountLink {
+    text-decoration: none;
     display: flex;
     justify-content: space-between;
     align-items: center;

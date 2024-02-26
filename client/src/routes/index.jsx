@@ -15,26 +15,18 @@ export const router = createBrowserRouter([
   {
     path: "/user/login",
     element: <Login />,
-    errorElement: <Error />,
   },
   {
     path: "/user/register",
     element: <Register />,
-    errorElement: <Error />,
   },
   {
-    path: "/user/profile",
-    element: <Profile/>,
-    errorElement: <Error/>
+    element: <Protected />,
+    children: [
+      {
+        path: "/user/profile",
+        element: <Profile />
+      }
+    ]
   }
-  // {
-  //   element: <Protected />,
-  //   errorElement: <Error />,
-  //   children: [
-  //     {
-  //       path: "/user/profile",
-  //       element: <Profile />
-  //     }
-  //   ]
-  // }
 ]);

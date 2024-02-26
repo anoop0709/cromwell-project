@@ -1,0 +1,17 @@
+.profile-icons-shimm {
+background: linear-gradient(-180deg, rgba(255, 255, 255, 0.763) 0%, rgba(139, 139, 139, 0.5) 100%);
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+}
+.details-shimm {
+background: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+width: 300px;
+height: 150px;
+}
+@media screen and (min-width:360px) and (max-width:765px) {
+  .details-shimm {
+    max-width: 250px;
+  }
+
+  }

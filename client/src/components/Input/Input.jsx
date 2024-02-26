@@ -2,7 +2,7 @@ import "./Input.css";
 import { useState } from "react";
 
 export const Inputfield = (props) => {
-  const { label, id, errMessage, onChange, ...inputProps } = props;
+  const {  label, id, errMessage, onChange, ...inputProps } = props;
   const [focused, setFocused] = useState(false);
 
   const handleFocus = (e) => {
@@ -12,7 +12,7 @@ export const Inputfield = (props) => {
   return (
     <div>
       <div className="inputField">
-        <label>{label}</label>
+      <label>{label}</label>
         <input
           {...inputProps}
           onChange={onChange}
