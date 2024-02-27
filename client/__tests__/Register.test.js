@@ -62,7 +62,7 @@ describe("Register Component", () => {
       target: { value: "password" },
     });
 
-    fireEvent.click(screen.getByTestId("signin"));
+    fireEvent.click(screen.getByTestId("signup"));
 
     waitFor(() => {
       expect(
@@ -107,7 +107,7 @@ describe("Register Component", () => {
       target: { value: "password" },
     });
 
-    fireEvent.submit(screen.getByRole("button", { name: /sign in/i }));
+    fireEvent.submit(screen.getByRole("button", { name: /Register/i }));
 
     waitFor(() => {
       expect(screen.getByText("email already Registered")).toBeInTheDocument();

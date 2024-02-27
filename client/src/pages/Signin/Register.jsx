@@ -132,7 +132,7 @@ export const Register = () => {
                   onChange={onChange}
                 />
                 <div className="formBtn">
-                  <button type="submit" data-testid="signin">Sign in</button>
+                  <button type="submit" data-testid="signup">Register</button>
                 </div>
               </form>
               <div className="registerTxt">

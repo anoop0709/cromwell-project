@@ -7,8 +7,7 @@ export const userLoginInput = [
     placeholder: "Email",
     errMessage: "Should be a valid email",
     required: "true",
-    pattern:
-      "^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
+    pattern:"^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
   },
   {
     id: "2",
@@ -54,8 +53,7 @@ export const userRegisterInput = [
     placeholder: "Email",
     errMessage: "Should be a valid email",
     required: "true",
-    pattern:
-      "^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
+    pattern:"^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
   },
   {
     id: "4",

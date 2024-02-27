@@ -53,10 +53,8 @@ export const userLogin = async (req, res) => {
         return res.status(200).json({ userData, token });
         
     } catch (error) {
-        console.log(error);
         return res.status(500).send(error);          
     } finally {
-        console.log('db disconnected');
         await mongoose.disconnect();
     }
 };
@@ -86,17 +84,14 @@ export const userSignUp = async (req, res) => {
           }
         return res.status(200).json(success);
     } catch (error) {
-        console.log(error);
         return res.status(500).send(error);      
     } finally {
-        console.log('db disconnected');
         await mongoose.disconnect();
     }
 };
 
 export const userData = async (req, res) => {
     try {
-        console.log(req.params);
         const { id } = req.params;
         mongoSanitize.sanitize(id);
         await connectDatabase()
@@ -109,13 +104,11 @@ export const userData = async (req, res) => {
             email,
             isSubscribed
         };
-        console.log(userObj);
         return res.status(200).json({ userObj });
         
     } catch (error) {
         return res.status(500).send(error.message)
     } finally {
-        console.log('db disconnected');
         await mongoose.disconnect();
     }
 

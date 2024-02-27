@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Shimmer } from "../../components/Shimmer/Shimmer";
 
 
+
 export const Profile = () => {
   const userDetails = useSelector((state) => state?.User?.userData?.userObj);
   const fullName = userDetails?.firstName.concat(" ", userDetails?.lastName);
