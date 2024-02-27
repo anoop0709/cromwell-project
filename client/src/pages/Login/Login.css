@@ -11,7 +11,7 @@
     align-items: center;
     flex-direction: column;
     position:relative;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 0px 40px 0px;
 }
 .navigation {
     display: flex;
@@ -119,13 +119,29 @@
 }
 
 @media screen and (min-width:360px) and (max-width:765px) {
-   
+    .signInContainer {
+        padding: 10 0 10 0;
+    }
+    .signInWrapper {
+        margin: 0;
+    }
+    .logIcon {
+        display: none;
+    }
+    .loginTxt {
+        gap: 5px;
+    }
+    .loginTxt>h2 {
+        font-size: 1.2rem;
+    }
+     .navigation {
+        margin-left: 10px;
+    }
     .linkToRegister {
         font-size: 1rem;
     }
     .navigation>.linkToHome {
         font-size: 1rem;
-        margin-left: 10px;
     }
     .registerTxt>.linkToRegister {
         font-size: 14px;

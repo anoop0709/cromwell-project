@@ -33,7 +33,6 @@ export const Profile = () => {
     <>
       <Header />
       <div className="profile-container">
-        <div className="profile-wrapper">
           <div className="navigation">
             <FontAwesomeIcon icon={faHome} className="gtIcon" />
             <Link to={"/"} className="linkToHome">
@@ -42,6 +41,7 @@ export const Profile = () => {
             <FontAwesomeIcon icon={faGreaterThan} className="gtIcon" />
             <p>Profile</p>
           </div>
+        <div className="profile-wrapper">
           <div className="heading">
             <h2>My Home</h2>
           </div>

@@ -17,26 +17,26 @@ export const Header = () => {
         <div className="navWrapper">
           <div className="logoDiv">
             <Link to={"/"} className="logoLink">
-              <img src={Logo} alt="" />
+              <img data-testid="logo-img" src={Logo} alt="" />
             </Link>
           </div>
-          <div className="navBar">
+          <div className="navBar" data-testid="icons">
             <div className="navItems">
               <FontAwesomeIcon className="navIcon" icon={faStar} />
               <h5 className="account">Favourites</h5>
             </div>
             {token ? (
-              <div className="navItems">
+              <div className="navItems" >
                 <Link to={"/user/profile"} className="accountLink">
                   <FontAwesomeIcon className="navIcon" icon={faUser} />
                   <h5 className="account">My Account</h5>
                 </Link>
               </div>
             ) : (
-              <div className="navItems">
-                <Link to={"/user/login"} className="accountLink">
-                  <FontAwesomeIcon className="navIcon" icon={faUser} />
-                  <h5 className="account">Login/Register</h5>
+              <div className="navItems" data-testid="user-icon">
+                <Link to={"/user/login"} className="accountLink" >
+                  <FontAwesomeIcon className="navIcon" icon={faUser}/>
+                  <h5 className="account" data-testid="login-text">Login/Register</h5>
                 </Link>
               </div>
             )}

@@ -6,7 +6,7 @@ import { Footer } from "../../components/Footer/Footer";
 
 export const Home = () => {
   return (
-    <div>
+    <div data-testid="home-page">
       <Header />
       <div className="homePageContainer">
         <Promotion />

@@ -10,7 +10,7 @@
     font-weight: 500;
     margin-bottom: 5px;
 }
-.inputField>input{
+.inputField>.inputDiv>input{
     width: 300px;
     outline: none;
     padding: 10px;
@@ -25,7 +25,7 @@
 .inputField>input:focus{
     border:1px solid rgb(0, 0, 0)
 }
-.inputField>span{
+.inputField>.inputDiv>span{
     width: 300px;
     padding: 2px;
     font-size: 12px;
@@ -37,4 +37,20 @@ input:invalid[focused = "true"] ~ span{
 }
 input:invalid[focused = "true"]{
     border:1px solid red;
+}
+.inputDiv {
+    position: relative;
+}
+.showPassword {
+  position: absolute;
+  margin: 10px;
+  color: rgb(82, 82, 82);
+  right: 0px;
+}
+
+@media screen and (min-width:360px) and (max-width:765px) {
+    .inputField>input {
+        padding: 5px;
+        max-width: 250px;
+    }
 }

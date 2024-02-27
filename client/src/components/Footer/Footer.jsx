@@ -5,8 +5,8 @@ export const Footer = () => {
   return (
     <div className="footerContainer">
       <div className="footerBox">
-        {footerDataList.map((data) => (
-          <div className="footerWrapper">
+        {footerDataList.map((data,index) => (
+          <div className="footerWrapper" key={index}>
             <div className="footerHeadings">
               <h4>{data.heading}</h4>
             </div>

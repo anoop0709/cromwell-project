@@ -4,7 +4,7 @@
     align-items: center;
     font-family:'Courier New', Courier, monospace;
     border-top: 2px outset rgb(182, 182, 182);
-    padding: 50px 0px 50px 0px;
+    padding: 20px 0px 20px 0px;
     
 }
 .footerBox {
@@ -42,7 +42,7 @@
     .footerBox {
       flex-direction: column;
       gap: 20px;
-      padding: 30px 0px 30px 0px;
+      padding: 10px 0px 10px 0px;
     }
     .footerContainer:hover {
         cursor: pointer;

@@ -13,3 +13,5 @@ Api.interceptors.request.use((req) => {
 export const user_Login = (FormData) => Api.post("/user/login", FormData);
 export const user_Signup = (FormData) => Api.post("/user/register", FormData);
 export const user_Info = (id) => Api.get(`/user/profile/${id}`);
+
+export default Api;

@@ -89,7 +89,7 @@ export const Login = () => {
                 ))}
 
                 <div className="formBtn">
-                  <button type="submit"> Log in</button>
+                  <button type="submit" data-testid="login">Log in</button>
                 </div>
               </form>
               <div className="registerTxt">

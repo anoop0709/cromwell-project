@@ -70,7 +70,7 @@ export const userSignUp = async (req, res) => {
         if (existingUser) {
             errorObj = {
                 statusCode: 401,
-                message: 'User already registered with us please login'
+                message: 'Email is already registered with us please login'
             };
             throw errorObj;
         }

@@ -93,7 +93,7 @@ export const Register = () => {
           <FontAwesomeIcon icon={faGreaterThan} className="gtIcon" />
           <p>Register</p>
         </div>
-        {showError && (
+        {showError && ( 
           <div className="errorContainer">
             <div className="errorWrapper">
               <div className="errorMessage">
@@ -103,8 +103,8 @@ export const Register = () => {
               <div className="borderLine"></div>
             </div>
           </div>
-        )} 
-         {showSuccess && (
+         )}  
+         {showSuccess && ( 
           <div className="successContainer">
             <div className="successWrapper">
               <div className="successMessage">
@@ -114,7 +114,7 @@ export const Register = () => {
               <div className="borderLineSuccess"></div>
             </div>
           </div>
-        )} 
+        )}
         <div className="signInWrapper">
           <div className="signinbox">
             <div className="signInform">
@@ -132,7 +132,7 @@ export const Register = () => {
                   onChange={onChange}
                 />
                 <div className="formBtn">
-                  <button type="submit">Sign in</button>
+                  <button type="submit" data-testid="signin">Sign in</button>
                 </div>
               </form>
               <div className="registerTxt">
