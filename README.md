@@ -1,6 +1,6 @@
 # cromwell-project
 
-In this project users can register, login and navigate to  My Account to view the user profile. This project front end built in react with parcel bundler and back end in express js framework.
+this is a simple project, which users can register, login and navigate to  My Account to view the user profile. This project front end built in react with parcel bundler and back end in express js framework.
 
 ### Getting started
 ---
