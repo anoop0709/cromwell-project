@@ -16,10 +16,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Shimmer } from "../../components/Shimmer/Shimmer";
 
+
 export const Profile = () => {
   const userDetails = useSelector((state) => state?.User?.userData?.userObj);
   const fullName = userDetails?.firstName.concat(" ", userDetails?.lastName);
-
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
@@ -62,8 +62,8 @@ export const Profile = () => {
                       <h5>MY PROFILE</h5>
                       <p>View and update your profile information.</p>
                       <div className="p-tag">
-                        <p>Name: {fullName}</p>
-                        <p>Email: {userDetails?.email}</p>
+                        <p data-testid="fullname">Name: {fullName}</p>
+                        <p data-testid="email">Email: {userDetails?.email}</p>
                       </div>
                     </div>
                   </div>
@@ -150,16 +150,16 @@ export const Profile = () => {
                         <p>
                           Subscribed:{" "}
                           {userDetails?.isSubscribed ? (
-                            <span>Yes</span>
+                            <span data-testid="subscribed-yes">Yes</span>
                           ) : (
-                            <span>No</span>
+                            <span data-testid="subscribed-no">No</span>
                           )}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="grid-item" onClick={handleLogOut}>
+                <div className="grid-item" onClick={handleLogOut} data-testid="log-out">
                   <div className="profile-details">
                     <FontAwesomeIcon
                       className="profile-icons"
