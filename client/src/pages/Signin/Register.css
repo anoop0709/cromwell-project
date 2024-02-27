@@ -1,0 +1,197 @@
+.errorContainer {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       align-items: end;
+       top:20px;
+       position: absolute;     
+     }
+
+   
+.errorWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 500px;
+    background-color: rgb(249, 77, 77);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.1); 
+}
+.errorMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 20px;
+ } 
+.borderLine {
+    border-bottom: 3px solid rgb(232, 232, 232);
+    animation-name: borderanimation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    bottom: 0;
+    
+}
+.errorWrapper>.errorMessage>.errorIcon {
+    color: rgb(255, 255, 255);
+    font-size: 1.8rem;
+}
+.errorWrapper>.errorMessage>p {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-weight:800 ;
+}
+
+.successContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    top:20px;
+    position: absolute;     
+  }
+
+
+.successWrapper {
+ display: flex;
+ justify-content: flex-end;
+ align-items: flex-end;
+ flex-direction: column;
+ gap: 0px;
+ width: 500px;
+ background-color: rgb(95, 144, 93);
+ box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.1); 
+}
+.successMessage {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 30px;
+ padding: 10px 20px;
+} 
+.borderLineSuccess {
+ border-bottom: 3px solid rgb(232, 232, 232);
+ animation-name: borderanimation;
+ animation-duration: 5s;
+ animation-timing-function: linear;
+ animation-direction:calc(500);
+ bottom: 0;
+ 
+}
+.successWrapper>.successMessage>.successIcon {
+ color: rgb(255, 255, 255);
+ font-size: 1.8rem;
+}
+.successWrapper>.successMessage>p {
+ color: rgb(255, 255, 255);
+ font-size: 1.2rem;
+ font-weight:800 ;
+}
+@keyframes borderanimation {
+    0% {
+        width: 500px;
+    }
+    10% {
+        width: 450px;
+    }
+    20% {
+        width: 400px;
+    }
+    30% {
+        width: 350px;
+    }
+    40% {
+        width: 300px;
+    }
+    50% {
+        width: 250px;
+    }
+    60% {
+        width: 200px
+    }
+    75% {
+        width: 150px;
+    }
+    85% {
+        width: 75px;
+    }
+    100% {
+        width: 0px;
+    }
+ }
+
+ @media screen and (min-width:360px) and (max-width:765px) {
+
+    .errorContainer {
+        max-width: 360px;
+        width: 100%;   
+        top: 80px;   
+        right: 0;     
+    }
+    .errorWrapper {
+        max-width: 360px;
+    }
+    .errorWrapper>.errorMessage>p {
+        font-size: .9rem;
+    }
+    .errorWrapper>.errorMessage>.errorIcon {
+        font-size: .9rem;
+    }
+    .errorMessage {
+        padding: 5px 10px;
+    }
+
+    .successContainer {
+        max-width: 360px;
+        width: 100%;   
+        top: 80px;   
+        right: 0;
+    }
+    .successWrapper {
+        max-width: 360px;
+    }
+    .successWrapper>.successMessage>p {
+        font-size: .9rem;
+    }
+    .successWrapper>.successMessage>.successIcon {
+        font-size: .9rem;
+    }
+    .successMessage {
+        padding: 5px 10px;
+    }
+
+    @keyframes borderanimation {
+        0% {
+            width: 360px;
+        }
+        10% {
+            width: 330px;
+        }
+        20% {
+            width: 290px;
+        }
+        30% {
+            width: 250px;
+        }
+        40% {
+            width: 210px;
+        }
+        50% {
+            width: 170px;
+        }
+        60% {
+            width: 130px
+        }
+        75% {
+            width: 90px;
+        }
+        85% {
+            width: 50px;
+        }
+        100% {
+            width: 0px;
+        }
+    }
+ }

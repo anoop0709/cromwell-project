@@ -1,0 +1,56 @@
+.inputField{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px;
+
+}
+.inputField>label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.inputField>.inputDiv>input{
+    width: 300px;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    border:1px solid gray;
+    
+}
+.inputField>input::placeholder{
+    font-size: 10px;
+}
+
+.inputField>input:focus{
+    border:1px solid rgb(0, 0, 0)
+}
+.inputField>.inputDiv>span{
+    width: 300px;
+    padding: 2px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+input:invalid[focused = "true"] ~ span{
+    display: block;
+}
+input:invalid[focused = "true"]{
+    border:1px solid red;
+}
+.inputDiv {
+    position: relative;
+}
+.showPassword {
+  position: absolute;
+  margin: 10px;
+  color: rgb(82, 82, 82);
+  right: 0px;
+}
+
+@media screen and (min-width:360px) and (max-width:765px) {
+    .inputField>input {
+        padding: 5px;
+        max-width: 250px;
+    }
+}
