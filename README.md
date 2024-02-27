@@ -54,7 +54,7 @@ npm install
 ```
 - step 4: update the database connection string and jwt secret key. port number must be 3001.
 ```js
-Add and update these keys in .env file.      
+Add and update these keys in .env file in the server folder.      
 MONGO_DB = 'your database connection string',      
 JWT_SECRET_KEY = 'your secret key',
 PORT = 3001
