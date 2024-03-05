@@ -1,14 +1,26 @@
-import mongoose from 'mongoose';
-import 'dotenv/config'
-
+import mongoose from "mongoose";
+import "dotenv/config";
 
 const { MONGO_DB } = process.env;
-export const connectDatabase = async () => { 
-    try {
-        const connection = await mongoose.connect(MONGO_DB);   
-        console.log('db connected');
-        return connection;    
-    } catch (error) {
-        throw error;
-    }
-};
+
+mongoose
+  .connect(MONGO_DB)
+  .then((result) => {
+    console.log("db connected");
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+mongoose.set("strictQuery", true);
+
+process.on("SIGINT", () => {
+  mongoose
+    .disconnect(MONGO_DB)
+    .then((result) => {
+      console.log("db disconnected");
+      process.exit();
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+});

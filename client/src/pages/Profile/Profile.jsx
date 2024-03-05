@@ -15,12 +15,14 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Shimmer } from "../../components/Shimmer/Shimmer";
-
-
+import { useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 
 export const Profile = () => {
   const userDetails = useSelector((state) => state?.User?.userData?.userObj);
   const fullName = userDetails?.firstName.concat(" ", userDetails?.lastName);
+  const userToken = JSON.parse(localStorage.getItem("profile"))?.token;
+
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
@@ -30,18 +32,25 @@ export const Profile = () => {
     Navigate("/");
   };
 
+  useEffect(() => {
+    const decodedToken = jwtDecode(userToken);
+    let currentTime = new Date();
+    if (decodedToken.exp * 1000 < currentTime.getTime()) {
+      handleLogOut();
+    }
+  }, []);
   return (
     <>
       <Header />
       <div className="profile-container">
-          <div className="navigation">
-            <FontAwesomeIcon icon={faHome} className="gtIcon" />
-            <Link to={"/"} className="linkToHome">
-              Home
-            </Link>
-            <FontAwesomeIcon icon={faGreaterThan} className="gtIcon" />
-            <p>Profile</p>
-          </div>
+        <div className="navigation">
+          <FontAwesomeIcon icon={faHome} className="gtIcon" />
+          <Link to={"/"} className="linkToHome">
+            Home
+          </Link>
+          <FontAwesomeIcon icon={faGreaterThan} className="gtIcon" />
+          <p>Profile</p>
+        </div>
         <div className="profile-wrapper">
           <div className="heading">
             <h2>My Home</h2>
@@ -160,7 +169,11 @@ export const Profile = () => {
                     </div>
                   </div>
                 </div>
-                <div className="grid-item" onClick={handleLogOut} data-testid="log-out">
+                <div
+                  className="grid-item"
+                  onClick={handleLogOut}
+                  data-testid="log-out"
+                >
                   <div className="profile-details">
                     <FontAwesomeIcon
                       className="profile-icons"

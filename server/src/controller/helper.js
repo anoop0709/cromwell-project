@@ -2,16 +2,13 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { User } from '../model/userModel.js';
 import 'dotenv/config';
-import mongoose from 'mongoose';
-import { connectDatabase } from '../utils/dataBaseConfig.js';
-import mongoSanitize from 'express-mongo-sanitize';
 
 const { JWT_SECRET_KEY } = process.env;
 
 
 export const home = async (req, res) => {
     try {
-      res.send('hello');
+      res.send('Server');
     } catch (err) {
       console.log(err);
     }
@@ -19,11 +16,18 @@ export const home = async (req, res) => {
 
 export const userLogin = async (req, res) => {
     try {
-        const { email, password } = req.body;
-        await connectDatabase()
-        const user = await User.findOne({ email });
         let errorObj;
+        const { email, password } = req.body;
 
+        if((email === '')) {
+            errorObj = {
+                statusCode: 404,
+                message: 'please enter a valid email'
+            }
+            throw errorObj;
+        }
+        const user = await User.findOne({ email });
+       
         if (!user) {
             errorObj = {
                 statusCode: 404,
@@ -54,16 +58,13 @@ export const userLogin = async (req, res) => {
         
     } catch (error) {
         return res.status(500).send(error);          
-    } finally {
-        await mongoose.disconnect();
     }
 };
 
 export const userSignUp = async (req, res) => {
     try {
-        const { firstName, lastName, email, password } = req.body;
         let errorObj;
-        await connectDatabase()
+        const { firstName, lastName, email, password } = req.body;
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             errorObj = {
@@ -85,17 +86,23 @@ export const userSignUp = async (req, res) => {
         return res.status(200).json(success);
     } catch (error) {
         return res.status(500).send(error);      
-    } finally {
-        await mongoose.disconnect();
     }
 };
 
 export const userData = async (req, res) => {
     try {
+        let errorObj;
         const { id } = req.params;
-        mongoSanitize.sanitize(id);
-        await connectDatabase()
+       
         const user = await User.findOne({ _id: id });
+        if (!user) {
+            errorObj = {
+                        statusCode: 500,
+                        message: 'no such user'
+                    };
+                    throw errorObj;
+
+        }
         const { _id, firstName, lastName, email, isSubscribed } = user;
         const userObj = {
             _id,
@@ -108,8 +115,6 @@ export const userData = async (req, res) => {
         
     } catch (error) {
         return res.status(500).send(error.message)
-    } finally {
-        await mongoose.disconnect();
     }
 
 }

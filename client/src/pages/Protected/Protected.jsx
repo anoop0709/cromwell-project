@@ -9,7 +9,9 @@ export const Protected = () => {
     const userId = JSON.parse(localStorage.getItem("profile"))?.userData?._id;
     const userDetails = useSelector((state) => state?.User?.userData?.userObj);
     useEffect(() => {
+      if (userToken && userId) {
         if (!userDetails) dispatch(userProfile(userId));
+      }
       }, []);
     return userToken ? <Outlet/> : <Navigate to="/user/login"/>
 }
