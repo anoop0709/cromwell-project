@@ -6,7 +6,7 @@ const { JWT_SECRET_KEY } = process.env;
 
 export const userAuthentication = (req, res, next) => {
     try {
-        const token = req.headers.authorization.split(" ")[1];
+        const token = req.headers?.authorization?.split(" ")[1];
         if (!token) {
             throw new Error('token not found');
         }
@@ -16,6 +16,7 @@ export const userAuthentication = (req, res, next) => {
         }
         next()
     } catch (error) {
+        console.log(error);
         return res.status(401).send(error.message);
     }
 };
