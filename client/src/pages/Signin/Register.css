@@ -20,10 +20,11 @@
 }
 .errorMessage {
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     gap: 30px;
     padding: 10px 20px;
+    width: 100%;
  } 
 .borderLine {
     border-bottom: 3px solid rgb(232, 232, 232);
