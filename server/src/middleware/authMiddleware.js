@@ -16,7 +16,6 @@ export const userAuthentication = (req, res, next) => {
         }
         next()
     } catch (error) {
-        console.log(error);
         return res.status(401).send(error.message);
     }
 };
