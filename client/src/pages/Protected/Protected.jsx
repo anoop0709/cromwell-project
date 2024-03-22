@@ -2,11 +2,11 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userProfile } from '../../actions/apiActions';
+import { fetchToken } from '../../utils/fetchToken';
 
 export const Protected = () => {
     const dispatch = useDispatch();
-    const userToken = JSON.parse(localStorage.getItem('profile'))?.token;
-    const userId = JSON.parse(localStorage.getItem("profile"))?.userData?._id;
+    const { userToken, userId } = fetchToken();
     const userDetails = useSelector((state) => state?.User?.userData?.userObj);
     useEffect(() => {
       if (userToken && userId) {

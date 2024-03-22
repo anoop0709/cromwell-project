@@ -56,7 +56,8 @@ export const userSignUp = async (req, res) => {
   try {
     let errorObj;
     const { firstName, lastName, email, password } = req.body;
-    const existingUser = await User.findOne({ email });
+    const Email = JSON.stringify(email).toLowerCase();
+    const existingUser = await User.findOne({ Email });
     if (existingUser) {
       errorObj = {
         statusCode: 401,
@@ -68,7 +69,7 @@ export const userSignUp = async (req, res) => {
     await User.create({
       firstName,
       lastName,
-      email,
+      email: Email,
       password: hashedPassword,
     });
     const success = {

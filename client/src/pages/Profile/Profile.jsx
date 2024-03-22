@@ -17,11 +17,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Shimmer } from "../../components/Shimmer/Shimmer";
 import { useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
+import { fetchToken } from "../../utils/fetchToken";
 
 export const Profile = () => {
   const userDetails = useSelector((state) => state?.User?.userData?.userObj);
   const fullName = userDetails?.firstName.concat(" ", userDetails?.lastName);
-  const userToken = JSON.parse(localStorage.getItem("profile"))?.token;
+  const { userToken } = fetchToken();
 
   const dispatch = useDispatch();
   const Navigate = useNavigate();
